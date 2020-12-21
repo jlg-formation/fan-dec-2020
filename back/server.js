@@ -1,12 +1,15 @@
-console.log("hello JL");
-
 const express = require("express");
+const serveIndex = require("serve-index");
 const app = express();
 const port = 3000;
 
-app.get("/", function (req, res) {
-  res.send("Hello World");
+app.use(function (req, res, next) {
+  console.log("req.url", req.url);
+  next();
 });
+
+app.use(express.static("."));
+app.use(serveIndex("."));
 
 app.listen(port, () => {
   console.log("Server started with success on port " + port);
