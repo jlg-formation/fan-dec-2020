@@ -1,0 +1,29 @@
+@import "/normalize.css/normalize.css";
+
+app-header header {
+  background: #eee;
+  height: 3em;
+  padding: 0 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+app-header img {
+  height: 2.5em;
+  padding-right: 0.5em;
+}
+
+app-header a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+app-header a:hover {
+  text-decoration: underline;
+}
+
+app-header a span {
+  font-size: 1.4em;
+}
