@@ -12,6 +12,7 @@
   "dependencies": {
     "angular": "^1.8.2",
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
     "nodemon": "^2.0.6",
     "serve-index": "^1.9.1"
   }
