@@ -1,0 +1,72 @@
+@import "/normalize.css/normalize.css";
+
+$height: 3em;
+
+body {
+  font-family: sans-serif;
+}
+
+button {
+  padding: 0.5em 1em;
+}
+
+app-root {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+app-header {
+  header {
+    background: #eee;
+    height: $height;
+    padding: 0 0.5em;
+    display: flex;
+    align-items: center;
+    img {
+      height: 2.5em;
+      padding-right: 0.5em;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      color: inherit;
+      text-decoration: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      span {
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+app-body main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+}
+
+app-footer footer {
+  background: #eee;
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    color: inherit;
+    text-decoration: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

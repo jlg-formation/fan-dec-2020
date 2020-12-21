@@ -1,4 +1,18 @@
 @import "/normalize.css/normalize.css";
+body {
+  font-family: sans-serif;
+}
+
+button {
+  padding: 0.5em 1em;
+}
+
+app-root {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
 
 app-header header {
   background: #eee;
@@ -7,23 +21,46 @@ app-header header {
   display: flex;
   align-items: center;
 }
-
-app-header img {
+app-header header img {
   height: 2.5em;
   padding-right: 0.5em;
 }
-
-app-header a {
+app-header header a {
   display: flex;
   align-items: center;
   color: inherit;
   text-decoration: inherit;
 }
+app-header header a:hover {
+  text-decoration: underline;
+}
+app-header header a span {
+  font-size: 1.4em;
+  font-weight: bold;
+}
 
-app-header a:hover {
+app-body main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+app-body main h1 {
+  text-align: center;
+}
+
+app-footer footer {
+  background: #eee;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+app-footer footer a {
+  color: inherit;
+  text-decoration: inherit;
+}
+app-footer footer a:hover {
   text-decoration: underline;
 }
 
-app-header a span {
-  font-size: 1.4em;
-}
+/*# sourceMappingURL=style.css.map */
