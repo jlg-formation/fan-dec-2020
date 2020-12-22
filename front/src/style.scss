@@ -100,6 +100,34 @@ app-body {
       flex-flow: column;
       justify-content: center;
     }
+    main.stock {
+      nav {
+        padding-bottom: 1em;
+      }
+      table {
+        border: 0.1em solid #bbb;
+        border-collapse: collapse;
+        th,
+        td {
+          padding: 0.5em 1em;
+        }
+
+        thead {
+          background: #bbb;
+        }
+
+        tbody {
+          tr:nth-child(even) {
+            background: #eee;
+          }
+        }
+
+        td.price,
+        td.qty {
+          text-align: right;
+        }
+      }
+    }
   }
 }
 
