@@ -19,25 +19,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="name">Tournevis</td>
-          <td class="price">2.33 €</td>
-          <td class="qty">120</td>
-        </tr>
-        <tr>
-          <td class="name">Tournevis Cruciforme</td>
-          <td class="price">2.45 €</td>
-          <td class="qty">45</td>
-        </tr>
-        <tr>
-          <td class="name">Pince</td>
-          <td class="price">5.60 €</td>
-          <td class="qty">140</td>
-        </tr>
-        <tr>
-          <td class="name">Tondeuse à gazon</td>
-          <td class="price">70.50 €</td>
-          <td class="qty">5</td>
+        <tr ng-repeat="a in articleService.articles">
+          <td class="name">{{a.name}}</td>
+          <td class="price">{{a.price}} €</td>
+          <td class="qty">{{a.qty}}</td>
         </tr>
       </tbody>
     </table>
