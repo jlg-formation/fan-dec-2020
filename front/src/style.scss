@@ -6,6 +6,19 @@ body {
   font-family: sans-serif;
 }
 
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 0.5em;
+  width: 100%;
+  max-width: 50em;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+}
+
 button {
   padding: 0.5em 1em;
   background: #eee;
@@ -70,15 +83,6 @@ app-header {
         font-weight: bold;
       }
     }
-  }
-}
-
-app-body main {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  h1 {
-    text-align: center;
   }
 }
 
