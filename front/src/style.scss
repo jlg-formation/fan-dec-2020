@@ -131,6 +131,7 @@ app-body {
         td.price,
         td.qty {
           text-align: right;
+          white-space: nowrap;
         }
       }
     }
