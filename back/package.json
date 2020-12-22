@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.8.2",
+    "angular-i18n": "^1.8.2",
     "angular-route": "^1.8.2",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
