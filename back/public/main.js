@@ -15,10 +15,18 @@
       })
       .when("/stock/create", {
         templateUrl: "tmpl/appStockCreate.html",
+        controller: "StockCreateCtrl",
       });
 
     // configure html5 to get links working on jsfiddle
     $locationProvider.html5Mode(true);
+  });
+
+  myApp.controller("StockCreateCtrl", function StockCreateCtrl($scope) {
+    console.log("instantiation StockCreateCtrl");
+    $scope.submit = function () {
+      console.log("submit");
+    };
   });
 
   myApp.directive("appRoot", () => {
