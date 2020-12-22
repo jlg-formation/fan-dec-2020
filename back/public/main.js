@@ -55,6 +55,11 @@
       save() {
         localStorage.setItem("articles", JSON.stringify(this.articles));
       }
+
+      remove(articles) {
+        this.articles = this.articles.filter((a) => !articles.includes(a));
+        this.save();
+      }
     }
   );
 
@@ -78,6 +83,8 @@
 
         $scope.remove = function () {
           console.log("remove");
+          articleService.remove($scope.selectedArticles);
+          $scope.selectedArticles = [];
         };
       }
     }
