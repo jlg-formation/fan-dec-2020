@@ -13,4 +13,13 @@ class HttpArticleService extends ArticleService {
       this.articles = response.data;
     });
   }
+
+  add(article) {
+    super.add(article);
+    this.$http
+      .post("http://localhost:3000/api/articles", article)
+      .then((response) => {
+        this.refresh();
+      });
+  }
 }

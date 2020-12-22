@@ -13,6 +13,10 @@ const articles = [
   { id: "a4", name: "Tondeuse à gazon", price: 2.99, qty: 3 },
 ];
 
+let nextId = 5;
+
+app.use(express.json());
+
 app.use(function (req, res, next) {
   console.log("req.url", req.url);
   next();
@@ -20,6 +24,14 @@ app.use(function (req, res, next) {
 
 app.get("/api/articles", (req, res) => {
   res.json(articles);
+});
+
+app.post("/api/articles", (req, res) => {
+  const article = req.body;
+  article.id = "a" + nextId;
+  nextId++;
+  articles.push(article);
+  res.status(201).json(article);
 });
 
 app.use(express.static(node_modules));
