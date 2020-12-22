@@ -24,12 +24,14 @@
 
   myApp.controller(
     "StockCreateCtrl",
-    function StockCreateCtrl($scope, $location) {
-      console.log("instantiation StockCreateCtrl");
-      $scope.submit = function () {
-        console.log("submit");
-        $location.path("/stock");
-      };
+    class StockCreateCtrl {
+      constructor($scope, $location) {
+        console.log("instantiation StockCreateCtrl");
+        $scope.submit = function () {
+          console.log("submit");
+          $location.path("/stock");
+        };
+      }
     }
   );
 
