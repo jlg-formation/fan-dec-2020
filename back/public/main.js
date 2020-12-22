@@ -12,6 +12,9 @@
       })
       .when("/stock", {
         templateUrl: "tmpl/appStock.html",
+      })
+      .when("/stock/create", {
+        templateUrl: "tmpl/appStockCreate.html",
       });
 
     // configure html5 to get links working on jsfiddle

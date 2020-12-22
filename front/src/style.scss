@@ -1,4 +1,5 @@
 @import "/normalize.css/normalize.css";
+@import "form.scss";
 
 $height: 3em;
 
@@ -109,6 +110,9 @@ app-body {
     main.stock {
       nav {
         padding-bottom: 1em;
+        a {
+          text-decoration: none;
+        }
       }
       table {
         border: 0.1em solid #bbb;
@@ -125,6 +129,11 @@ app-body {
         tbody {
           tr:nth-child(even) {
             background: #eee;
+          }
+
+          tr:hover {
+            background: #ddd;
+            cursor: pointer;
           }
         }
 
