@@ -5,7 +5,7 @@
       <a href="/stock/create">
         <button>Ajouter</button>
       </a>
-      <button>Supprimer</button>
+      <button ng-hide="selectedArticles.length === 0">Supprimer</button>
     </nav>
     <table>
       <caption hidden>

@@ -63,6 +63,7 @@
     class StockCtrl {
       constructor($scope, articleService) {
         $scope.articleService = articleService;
+        $scope.selectedArticles = [];
       }
     }
   );
