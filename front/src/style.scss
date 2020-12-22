@@ -86,6 +86,23 @@ app-header {
   }
 }
 
+app-body {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+  div[ng-view] {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    main.home {
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+    }
+  }
+}
+
 app-footer footer {
   background: #eee;
   height: $height;

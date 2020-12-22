@@ -9,6 +9,9 @@
       })
       .when("/legal", {
         templateUrl: "tmpl/appLegal.html",
+      })
+      .when("/stock", {
+        templateUrl: "tmpl/appStock.html",
       });
 
     // configure html5 to get links working on jsfiddle
