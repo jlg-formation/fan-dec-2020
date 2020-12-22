@@ -3,15 +3,15 @@
   <form ng-submit="submit();">
     <label>
       <div>Nom</div>
-      <input type="text" />
+      <input type="text" ng-model="article.name" />
     </label>
     <label>
       <div>Prix</div>
-      <input type="text" />
+      <input type="number" min="0" step="0.01" ng-model="article.price" />
     </label>
     <label>
       <div>Quantité</div>
-      <input type="text" />
+      <input type="number" min="0" step="1" ng-model="article.qty" />
     </label>
     <button class="primary">Ajouter</button>
   </form>
