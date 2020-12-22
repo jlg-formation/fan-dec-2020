@@ -2,6 +2,12 @@
 
 $height: 3em;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
 }
