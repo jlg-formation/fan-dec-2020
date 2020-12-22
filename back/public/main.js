@@ -1,6 +1,19 @@
 (function () {
   "use strict";
-  const myApp = angular.module("myApp", []);
+  const myApp = angular.module("myApp", ["ngRoute"]);
+
+  myApp.config(function ($routeProvider, $locationProvider) {
+    $routeProvider
+      .when("/", {
+        templateUrl: "tmpl/appHome.html",
+      })
+      .when("/legal", {
+        templateUrl: "tmpl/appLegal.html",
+      });
+
+    // configure html5 to get links working on jsfiddle
+    $locationProvider.html5Mode(true);
+  });
 
   myApp.directive("appRoot", () => {
     return {
