@@ -1,4 +1,4 @@
 node_modules
 
-*.css
-*.map
+*/*.css
+*/*.map
