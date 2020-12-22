@@ -64,6 +64,21 @@
       constructor($scope, articleService) {
         $scope.articleService = articleService;
         $scope.selectedArticles = [];
+
+        $scope.toggle = function (article) {
+          console.log("toggle", article);
+          if ($scope.selectedArticles.includes(article)) {
+            $scope.selectedArticles = $scope.selectedArticles.filter(
+              (a) => a !== article
+            );
+            return;
+          }
+          $scope.selectedArticles.push(article);
+        };
+
+        $scope.remove = function () {
+          console.log("remove");
+        };
       }
     }
   );

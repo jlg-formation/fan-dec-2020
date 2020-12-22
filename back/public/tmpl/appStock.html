@@ -5,7 +5,9 @@
       <a href="/stock/create">
         <button>Ajouter</button>
       </a>
-      <button ng-hide="selectedArticles.length === 0">Supprimer</button>
+      <button ng-click="remove()" ng-hide="selectedArticles.length === 0">
+        Supprimer
+      </button>
     </nav>
     <table>
       <caption hidden>
@@ -19,7 +21,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="a in articleService.articles track by a.id">
+        <tr
+          ng-class="{selected: selectedArticles.includes(a)}"
+          ng-click="toggle(a)"
+          ng-repeat="a in articleService.articles track by a.id"
+        >
           <td class="name" title="{{a.name}}">{{a.name | ellipsis:15 }}</td>
           <td class="price">{{a.price | currency }}</td>
           <td class="qty">{{a.qty}}</td>

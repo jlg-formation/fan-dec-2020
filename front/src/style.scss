@@ -135,6 +135,10 @@ app-body {
             background: #ddd;
             cursor: pointer;
           }
+
+          tr.selected {
+            background: #ccc;
+          }
         }
 
         td.price,
