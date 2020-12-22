@@ -15,12 +15,7 @@
       getArticles() {
         const str = localStorage.getItem("articles");
         if (!str) {
-          return [
-            { id: "a1", name: "Tournevis", price: 2.99, qty: 100 },
-            { id: "a2", name: "Tournevis Cruciforme", price: 2.23, qty: 12 },
-            { id: "a3", name: "Pince", price: 4, qty: 345 },
-            { id: "a4", name: "Tondeuse à gazon", price: 2.99, qty: 3 },
-          ];
+          return [];
         }
         return JSON.parse(str);
       }

@@ -6,9 +6,20 @@ const port = 3000;
 const www = "public";
 const node_modules = "node_modules";
 
+const articles = [
+  { id: "a1", name: "Tournevis", price: 2.99, qty: 100 },
+  { id: "a2", name: "Tournevis Cruciforme", price: 2.23, qty: 12 },
+  { id: "a3", name: "Pince", price: 4, qty: 345 },
+  { id: "a4", name: "Tondeuse à gazon", price: 2.99, qty: 3 },
+];
+
 app.use(function (req, res, next) {
   console.log("req.url", req.url);
   next();
+});
+
+app.get("/api/articles", (req, res) => {
+  res.json(articles);
 });
 
 app.use(express.static(node_modules));
