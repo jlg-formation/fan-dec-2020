@@ -19,7 +19,7 @@ module.exports = {
       patterns: [{ from: "src/assets", to: "assets" }],
     }),
     new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   module: {
     rules: [
