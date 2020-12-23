@@ -11,4 +11,13 @@
       return input;
     };
   });
+
+  module.directive("appAutofocus", () => {
+    return {
+      controller: function AutofocusCtrl($element) {
+        console.log("AutofocusCtrl instantiated", $element);
+        $element[0].focus();
+      },
+    };
+  });
 })();
