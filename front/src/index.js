@@ -20,33 +20,31 @@ const myApp = angular.module("myApp", [
   "appArticles",
 ]);
 
-myApp.config([
-  "$routeProvider",
-  "$locationProvider",
-  function ($routeProvider, $locationProvider) {
-    $routeProvider
-      .when("/", {
-        template: appHomeHtml,
-      })
-      .when("/legal", {
-        template: appLegalHtml,
-      })
-      .when("/stock", {
-        template: appStockHtml,
-        controller: "StockCtrl",
-      })
-      .when("/stock/create", {
-        template: appStockCreateHtml,
-        controller: "StockCreateCtrl",
-      });
+myApp.config(function ($routeProvider, $locationProvider) {
+  console.log("config");
+  $routeProvider
+    .when("/", {
+      template: appHomeHtml,
+    })
+    .when("/legal", {
+      template: appLegalHtml,
+    })
+    .when("/stock", {
+      template: appStockHtml,
+      controller: "StockCtrl",
+    })
+    .when("/stock/create", {
+      template: appStockCreateHtml,
+      controller: "StockCreateCtrl",
+    });
 
-    // configure html5 to get links working on jsfiddle
-    $locationProvider.html5Mode(true);
-  },
-]);
+  // configure html5 to get links working on jsfiddle
+  $locationProvider.html5Mode(true);
+});
 
 class StockCtrl {
   constructor($scope, articleService) {
+    console.log("StockCtrl");
     $scope.articleService = articleService;
     $scope.selectedArticles = [];
 
@@ -68,7 +66,6 @@ class StockCtrl {
     };
   }
 }
-StockCtrl.$inject = ["$scope", "articleService"];
 
 myApp.controller("StockCtrl", StockCtrl);
 
@@ -88,6 +85,4 @@ class StockCreateCtrl {
     };
   }
 }
-StockCreateCtrl.$inject = ["$scope", "$location", "articleService"];
-
 myApp.controller("StockCreateCtrl", StockCreateCtrl);

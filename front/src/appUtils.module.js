@@ -15,13 +15,10 @@
   module.directive("appAutofocus", () => {
     return {
       restrict: "A",
-      controller: [
-        "$element",
-        function AutofocusCtrl($element) {
-          console.log("AutofocusCtrl instantiated", $element);
-          $element[0].focus();
-        },
-      ],
+      controller: function AutofocusCtrl($element) {
+        console.log("AutofocusCtrl instantiated", $element);
+        $element[0].focus();
+      },
     };
   });
 })();

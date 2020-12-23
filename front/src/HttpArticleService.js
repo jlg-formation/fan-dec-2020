@@ -2,6 +2,7 @@ import { ArticleService } from "./ArticleService";
 import { env } from "./environment/environment";
 
 export class HttpArticleService extends ArticleService {
+  /* @ngInject */
   constructor($http) {
     super();
     console.log("http article instantiated");
@@ -38,4 +39,3 @@ export class HttpArticleService extends ArticleService {
     });
   }
 }
-HttpArticleService.$inject = ["$http"];
