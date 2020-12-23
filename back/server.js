@@ -3,7 +3,7 @@ const serveIndex = require("serve-index");
 const path = require("path");
 const app = express();
 const port = 3000;
-const www = "public";
+const www = "../front/dist";
 const node_modules = "node_modules";
 
 let articles = [
@@ -45,7 +45,7 @@ app.use(express.static(www));
 app.use(serveIndex(www));
 
 app.use(function (req, res, next) {
-  res.sendFile(path.resolve(__dirname, "./public/index.html"));
+  res.sendFile(path.resolve(__dirname, www, "index.html"));
 });
 
 app.listen(port, () => {
