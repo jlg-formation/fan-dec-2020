@@ -2,7 +2,7 @@ const express = require("express");
 const serveIndex = require("serve-index");
 const path = require("path");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const www = "../front/dist";
 const node_modules = "node_modules";
 
