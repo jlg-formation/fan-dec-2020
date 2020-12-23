@@ -1,3 +1,5 @@
+import "./style.scss";
+
 import "angular";
 import "angular-route";
 import "angular-i18n/angular-locale_fr-fr";
