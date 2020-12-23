@@ -1,0 +1,36 @@
+<main class="stock">
+  <h1>Liste des articles</h1>
+  <div class="content">
+    <nav>
+      <a href="/stock/create">
+        <button>Ajouter</button>
+      </a>
+      <button ng-click="remove()" ng-hide="selectedArticles.length === 0">
+        Supprimer
+      </button>
+    </nav>
+    <table>
+      <caption hidden>
+        Liste des articles
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" class="name">Nom</th>
+          <th scope="col" class="price">Prix</th>
+          <th scope="col" class="qty">Quantité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          ng-class="{selected: selectedArticles.includes(a)}"
+          ng-click="toggle(a)"
+          ng-repeat="a in articleService.articles track by a.id"
+        >
+          <td class="name" title="{{a.name}}">{{a.name | ellipsis:15 }}</td>
+          <td class="price">{{a.price | currency }}</td>
+          <td class="qty">{{a.qty}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
