@@ -1,4 +1,5 @@
 import { ArticleService } from "./ArticleService";
+import { env } from "./environment/environment";
 
 export class HttpArticleService extends ArticleService {
   constructor($http) {
@@ -10,7 +11,7 @@ export class HttpArticleService extends ArticleService {
   }
 
   refresh() {
-    this.$http.get("http://localhost:3000/api/articles").then((response) => {
+    this.$http.get(env.articleUrl).then((response) => {
       console.log("response: ", response);
       this.articles = response.data;
     });
@@ -18,11 +19,9 @@ export class HttpArticleService extends ArticleService {
 
   add(article) {
     super.add(article);
-    this.$http
-      .post("http://localhost:3000/api/articles", article)
-      .then((response) => {
-        this.refresh();
-      });
+    this.$http.post(env.articleUrl, article).then((response) => {
+      this.refresh();
+    });
   }
 
   remove(articles) {
@@ -34,10 +33,8 @@ export class HttpArticleService extends ArticleService {
         "Content-Type": "application/json",
       },
     };
-    this.$http
-      .delete("http://localhost:3000/api/articles", config)
-      .then((response) => {
-        this.refresh();
-      });
+    this.$http.delete(env.articleUrl, config).then((response) => {
+      this.refresh();
+    });
   }
 }
