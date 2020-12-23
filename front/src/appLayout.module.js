@@ -5,30 +5,23 @@ import appFooterHtml from "./tmpl/appFooter.html";
 
 const module = angular.module("appLayout", []);
 
-module.directive("appRoot", () => {
-  return {
-    restrict: "E",
-    template: appRootHtml,
-  };
+module.component("appRoot", {
+  template: appRootHtml,
 });
 
-module.directive("appHeader", () => {
-  return {
-    restrict: "E",
-    template: appHeaderHtml,
-  };
+module.component("appHeader", {
+  template: appHeaderHtml,
 });
 
-module.directive("appBody", () => {
-  return {
-    restrict: "E",
-    template: appBodyHtml,
-  };
+module.component("appBody", {
+  template: appBodyHtml,
 });
 
-module.directive("appFooter", () => {
-  return {
-    restrict: "E",
-    template: appFooterHtml,
-  };
+module.component("appFooter", {
+  template: appFooterHtml,
+  controller: class FooterCtrl {
+    constructor($scope) {
+      $scope.year = new Date().getFullYear();
+    }
+  },
 });
