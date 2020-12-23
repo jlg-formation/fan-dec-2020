@@ -10,7 +10,8 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
-  mode: "development",
+  devtool: "source-map",
+  // mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/index.html"),

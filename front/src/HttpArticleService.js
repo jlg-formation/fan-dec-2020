@@ -38,3 +38,4 @@ export class HttpArticleService extends ArticleService {
     });
   }
 }
+HttpArticleService.$inject = ["$http"];
