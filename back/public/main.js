@@ -68,7 +68,7 @@
         };
 
         $scope.article = {
-          name: "Tournevis",
+          name: "",
           price: 2.33,
           qty: 100,
         };

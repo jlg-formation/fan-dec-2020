@@ -6,7 +6,7 @@ form {
   padding-top: 2em;
 
   label {
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
   }
 
   input {
@@ -17,5 +17,10 @@ form {
 
   button {
     margin-top: 2em;
+  }
+
+  .error {
+    height: 1em;
+    font-weight: bold;
   }
 }
