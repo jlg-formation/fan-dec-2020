@@ -22,4 +22,20 @@ class HttpArticleService extends ArticleService {
         this.refresh();
       });
   }
+
+  remove(articles) {
+    super.remove(articles);
+    const ids = articles.map((a) => a.id);
+    const config = {
+      data: ids,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    this.$http
+      .delete("http://localhost:3000/api/articles", config)
+      .then((response) => {
+        this.refresh();
+      });
+  }
 }

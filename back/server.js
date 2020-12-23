@@ -6,7 +6,7 @@ const port = 3000;
 const www = "public";
 const node_modules = "node_modules";
 
-const articles = [
+let articles = [
   { id: "a1", name: "Tournevis", price: 2.99, qty: 100 },
   { id: "a2", name: "Tournevis Cruciforme", price: 2.23, qty: 12 },
   { id: "a3", name: "Pince", price: 4, qty: 345 },
@@ -32,6 +32,14 @@ app.post("/api/articles", (req, res) => {
   nextId++;
   articles.push(article);
   res.status(201).json(article);
+});
+
+app.delete("/api/articles", (req, res) => {
+  const ids = req.body;
+  console.log("ids: ", ids);
+  articles = articles.filter((a) => !ids.includes(a.id));
+  console.log("articles: ", articles);
+  res.status(204).end();
 });
 
 app.use(express.static(node_modules));
